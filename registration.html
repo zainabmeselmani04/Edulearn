@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | EduLearn Academy</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="courses-page">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-mortarboard-fill me-1"></i>
+            Edu<span>Learn</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="courses.html">Courses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="my-courses.html">My Courses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-navbar active" href="registration.html">
+                        Register Now
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- REGISTRATION HERO -->
+<section class="registration-hero">
+
+    <div class="container text-center">
+
+        <span>START YOUR LEARNING JOURNEY</span>
+
+        <h1>Join <span>EduLearn Academy</span></h1>
+
+        <p>
+            Take the next step toward your future.
+            Complete the form below to register for one of our courses.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTRATION FORM -->
+<section class="registration-section">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="registration-card">
+
+                    <div class="registration-heading text-center">
+
+                        <div class="registration-icon">
+                            <i class="bi bi-person-plus-fill"></i>
+                        </div>
+
+                        <h2>Course Registration</h2>
+
+                        <p>
+                            Fill in your information and choose
+                            the course you would like to study.
+                        </p>
+
+                    </div>
+
+
+                    <form id="registrationForm" class="needs-validation" novalidate>
+
+                        <div class="row g-4">
+
+                            <!-- NAME -->
+                            <div class="col-md-6">
+
+                                <label for="fullName" class="form-label">
+                                    Full Name
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+
+                                    <input type="text"
+                                           class="form-control"
+                                           id="fullName"
+                                           name="name"
+                                           placeholder="Enter your full name"
+                                           required>
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please enter your name.
+                                </div>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+                            <div class="col-md-6">
+
+                                <label for="email" class="form-label">
+                                    Email Address
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+
+                                    <input type="email"
+                                           class="form-control"
+                                           id="email"
+                                           name="email"
+                                           placeholder="example@email.com"
+                                           required>
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+
+                            </div>
+
+
+                            <!-- PHONE -->
+                            <div class="col-md-6">
+
+                                <label for="phone" class="form-label">
+                                    Phone Number
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-telephone"></i>
+                                    </span>
+
+                                    <input type="tel"
+                                           class="form-control"
+                                           id="phone"
+                                           name="phone"
+                                           placeholder="+961 71 000 000"
+                                           pattern="[0-9+() -]{7,20}"
+                                           required>
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please enter a valid phone number.
+                                </div>
+
+                            </div>
+
+
+                            <!-- COURSE -->
+                            <div class="col-md-6">
+
+                                <label for="course" class="form-label">
+                                    Select Course
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-book"></i>
+                                    </span>
+
+                                    <select class="form-select"
+                                            id="course"
+                                            name="course"
+                                            required>
+
+                                        <option value="" selected disabled>
+                                            Choose a course
+                                        </option>
+
+                                        <option value="Web Development">
+                                            Web Development
+                                        </option>
+
+                                        <option value="Python Programming">
+                                            Python Programming
+                                        </option>
+
+                                        <option value="Data Analysis">
+                                            Data Analysis
+                                        </option>
+
+                                        <option value="Graphic Design">
+                                            Graphic Design
+                                        </option>
+
+                                        <option value="Digital Marketing">
+                                            Digital Marketing
+                                        </option>
+
+                                        <option value="Database Management">
+                                            Database Management
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Please select a course.
+                                </div>
+
+                            </div>
+
+
+                            <!-- MESSAGE -->
+                            <div class="col-12">
+
+                                <label for="message" class="form-label">
+                                    Message
+                                    <span class="optional-text">(Optional)</span>
+                                </label>
+
+                                <textarea class="form-control"
+                                          id="message"
+                                          name="message"
+                                          rows="5"
+                                          placeholder="Tell us if you have any questions or additional information..."></textarea>
+
+                            </div>
+
+
+                            <!-- SUBMIT BUTTON -->
+                            <div class="col-12">
+
+                                <button type="submit"
+                                        class="btn btn-register w-100">
+
+                                    Submit Registration
+                                    <i class="bi bi-arrow-right ms-2"></i>
+
+                                </button>
+
+                                <p class="registration-note text-center mt-3">
+                                    <i class="bi bi-shield-check me-1"></i>
+                                    Your information will be handled carefully.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                    <!-- SUCCESS MESSAGE -->
+                    <div id="successMessage" class="registration-success" hidden>
+
+                        <div class="success-icon">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+
+                        <h3>Registration Submitted!</h3>
+
+                        <p>
+                            Thank you for choosing EduLearn Academy.
+                            Your course has been added to My Courses.
+                        </p>
+
+                        <a href="my-courses.html" class="btn btn-course-main">
+                            <i class="bi bi-book-half me-2"></i>
+                            View My Courses
+                        </a>
+
+                        <a href="courses.html" class="btn btn-outline-secondary mt-2">
+                            Explore More Courses
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <a href="index.html" class="footer-brand">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    EduLearn
+                </a>
+
+                <p class="footer-description">
+                    Empowering learners through quality online education.
+                    Discover new skills, explore technology, and build
+                    a brighter future with EduLearn Academy.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5 class="footer-title">Quick Links</h5>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="my-courses.html">My Courses</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="registration.html">Register</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">Popular Courses</h5>
+
+                <ul class="footer-links">
+                    <li><a href="courses.html">Web Development</a></li>
+                    <li><a href="courses.html">Python Programming</a></li>
+                    <li><a href="courses.html">Data Science</a></li>
+                    <li><a href="courses.html">Java Programming</a></li>
+                    <li><a href="courses.html">Database Management</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">Contact Information</h5>
+
+                <ul class="footer-contact">
+
+                    <li>
+                        <i class="bi bi-envelope"></i>
+                        <span>info@edulearn.com</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-telephone"></i>
+                        <span>+961 71 000 000</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Lebanon</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="row align-items-center gy-2">
+
+                <div class="col-md-6">
+                    <p>
+                        © 2026 EduLearn Academy.
+                        All Rights Reserved.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms &amp; Conditions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+// ======================================
+// 1. COURSE INFORMATION
+// ======================================
+
+const courseNames = {
+    web: "Web Development",
+    python: "Python Programming",
+    data: "Data Analysis",
+    design: "Graphic Design",
+    marketing: "Digital Marketing",
+    database: "Database Management"
+};
+
+const courseDetails = {
+    web: {
+        id: "web",
+        title: "Web Development",
+        category: "Development",
+        duration: "8 Weeks",
+        level: "Beginner",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    },
+
+    python: {
+        id: "python",
+        title: "Python Programming",
+        category: "Programming",
+        duration: "10 Weeks",
+        level: "Beginner",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+    },
+
+    data: {
+        id: "data",
+        title: "Data Analysis",
+        category: "Data Science",
+        duration: "6 Weeks",
+        level: "Intermediate",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+    },
+
+    design: {
+        id: "design",
+        title: "Graphic Design",
+        category: "Design",
+        duration: "7 Weeks",
+        level: "Beginner",
+        image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb"
+    },
+
+    marketing: {
+        id: "marketing",
+        title: "Digital Marketing",
+        category: "Marketing",
+        duration: "5 Weeks",
+        level: "Beginner",
+        image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f"
+    },
+
+    database: {
+        id: "database",
+        title: "Database Management",
+        category: "Technology",
+        duration: "8 Weeks",
+        level: "Intermediate",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+    }
+};
+
+// ======================================
+// 2. AUTOMATICALLY SELECT COURSE
+// ======================================
+
+const courseSelect = document.getElementById("course");
+
+const selectedCourse = new URLSearchParams(
+    window.location.search
+).get("course");
+
+if (selectedCourse && courseNames[selectedCourse]) {
+    courseSelect.value = courseNames[selectedCourse];
+}
+
+
+// ======================================
+// 3. GET REGISTERED COURSES
+// ======================================
+
+function getRegisteredCourses() {
+
+    return JSON.parse(
+        localStorage.getItem("registeredCourses")
+    ) || [];
+
+}
+
+
+// ======================================
+// 4. SAVE REGISTERED COURSE
+// ======================================
+
+function saveRegisteredCourse() {
+
+    const selectedCourseName = courseSelect.value;
+
+    // Find course information using its name
+    const course = Object.values(courseDetails).find(
+        item => item.title === selectedCourseName
+    );
+
+    if (!course) {
+        return false;
+    }
+
+    // Get previously registered courses
+    let registeredCourses = getRegisteredCourses();
+
+    // Check if the course already exists
+    const alreadyRegistered = registeredCourses.some(
+        item => item.id === course.id
+    );
+
+    if (alreadyRegistered) {
+
+        return "duplicate";
+
+    }
+
+    // Add the new course
+    registeredCourses.push(course);
+
+    // Save courses in localStorage
+    localStorage.setItem(
+        "registeredCourses",
+        JSON.stringify(registeredCourses)
+    );
+
+    return true;
+
+}
+
+
+// ======================================
+// 5. FORM VALIDATION AND SUBMISSION
+// ======================================
+
+const form = document.getElementById("registrationForm");
+
+const successMessage = document.getElementById("successMessage");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // Check form validation
+    if (!form.checkValidity()) {
+
+        event.stopPropagation();
+
+        form.classList.add("was-validated");
+
+        return;
+
+    }
+
+    // Save the selected course
+    const result = saveRegisteredCourse();
+
+    if (result === "duplicate") {
+
+        alert("You are already registered for this course.");
+
+        return;
+
+    }
+
+    if (result === false) {
+
+        alert("Please select a valid course.");
+
+        return;
+
+    }
+
+    // Hide the form
+    form.hidden = true;
+
+    // Show success message
+    successMessage.hidden = false;
+
+    // Scroll to success message
+    successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+</script>
+
+</body>
+</html>

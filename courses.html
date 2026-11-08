@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Courses | EduLearn Academy</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Search and Filter CSS -->
+    <style>
+
+        .course-search {
+            max-width: 1000px;
+            margin: 35px auto 45px;
+        }
+
+        .course-search .row {
+            align-items: center;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            padding: 12px 18px;
+            border: 1px solid #e2e6ef;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s ease;
+            min-height: 50px;
+        }
+
+        .search-box:focus-within {
+            border-color: #4f46e5;
+            box-shadow: 0 5px 20px rgba(79, 70, 229, 0.12);
+        }
+
+        .search-box i {
+            font-size: 20px;
+            color: #4f46e5;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .search-box input::placeholder {
+            color: #999;
+        }
+
+        .course-search .form-select {
+            min-height: 50px;
+            border: 1px solid #e2e6ef;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            color: #444;
+            cursor: pointer;
+        }
+
+        .course-search .form-select:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+        }
+
+        #noResults {
+            display: none;
+            color: #777;
+            font-size: 16px;
+            padding: 25px;
+        }
+
+        @media (max-width: 767px) {
+            .course-search {
+                margin: 25px auto 35px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body class="courses-page">
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg site-navbar sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-mortarboard-fill me-1"></i>
+            Edu<span>Learn</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="courses.html">Courses</a>
+                </li>
+<li class="nav-item">
+    <a class="nav-link" href="my-courses.html">My Courses</a>
+</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link nav-cta" href="registration.html">
+                        Join EduLearn
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- PAGE HERO -->
+<section class="courses-hero">
+
+    <div class="container text-center">
+
+        <span class="courses-label">LEARN. GROW. SUCCEED.</span>
+
+        <h1>Explore Our <span>Courses</span></h1>
+
+        <p>
+            Discover new skills and expand your knowledge with
+            our professional online courses.
+        </p>
+
+        <a href="#available-courses" class="btn btn-course-main">
+            Explore Courses <i class="bi bi-arrow-down ms-2"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- COURSES SECTION -->
+<section class="available-courses section-space" id="available-courses">
+
+    <div class="container">
+
+        <div class="courses-heading text-center">
+
+            <span class="section-subtitle">OUR LEARNING PROGRAMS</span>
+
+            <h2>Find the Right Course for You</h2>
+
+            <p>
+                Develop your skills through practical lessons
+                designed to help you achieve your goals.
+            </p>
+
+        </div>
+
+
+        <!-- COURSE SEARCH AND FILTERS -->
+        <div class="course-search">
+
+            <div class="row g-3">
+
+                <!-- SEARCH BY COURSE NAME -->
+                <div class="col-lg-4 col-md-12">
+
+                    <div class="search-box">
+
+                        <i class="bi bi-search"></i>
+
+                        <input
+                            type="text"
+                            id="courseSearch"
+                            placeholder="Search by course name..."
+                            aria-label="Search courses by name">
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTER BY CATEGORY -->
+                <div class="col-lg-4 col-md-6">
+
+                    <select id="categoryFilter"
+                            class="form-select"
+                            aria-label="Filter courses by category">
+
+                        <option value="all">All Categories</option>
+                        <option value="Development">Development</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Design">Design</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Technology">Technology</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- FILTER BY LEVEL -->
+                <div class="col-lg-4 col-md-6">
+
+                    <select id="levelFilter"
+                            class="form-select"
+                            aria-label="Filter courses by level">
+
+                        <option value="all">All Levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COURSE CARDS -->
+        <div class="row g-4" id="courseContainer">
+
+
+            <!-- COURSE 1: WEB DEVELOPMENT -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="course-card"
+                     data-category="Development"
+                     data-level="Beginner">
+
+                    <div class="course-image">
+
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                             alt="Web development course">
+
+                        <span class="course-category">Development</span>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span>Beginner Friendly</span>
+                        </div>
+
+                        <h4>Web Development</h4>
+
+                        <p>
+                            Learn how to build modern and responsive
+                            websites using HTML, CSS and JavaScript.
+                        </p>
+
+                        <div class="course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i> 8 Weeks
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i> Beginner
+                            </span>
+
+                        </div>
+
+                        <a href="course-details.html?course=web"
+                           class="btn btn-course-details">
+
+                            View Details <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 2: PYTHON PROGRAMMING -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="course-card"
+                     data-category="Programming"
+                     data-level="Beginner">
+
+                    <div class="course-image">
+
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                             alt="Python programming course">
+
+                        <span class="course-category">Programming</span>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span>Popular Course</span>
+                        </div>
+
+                        <h4>Python Programming</h4>
+
+                        <p>
+                            Understand programming concepts and develop
+                            useful applications using Python.
+                        </p>
+
+                        <div class="course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i> 10 Weeks
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i> Beginner
+                            </span>
+
+                        </div>
+
+                        <a href="course-details.html?course=python"
+                           class="btn btn-course-details">
+
+                            View Details <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 3: DATA ANALYSIS -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="course-card"
+                     data-category="Data Science"
+                     data-level="Intermediate">
+
+                    <div class="course-image">
+
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                             alt="Data analysis course">
+
+                        <span class="course-category">Data Science</span>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span>Career Skills</span>
+                        </div>
+
+                        <h4>Data Analysis</h4>
+
+                        <p>
+                            Learn to organize, analyze and understand
+                            data to make better decisions.
+                        </p>
+
+                        <div class="course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i> 6 Weeks
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i> Intermediate
+                            </span>
+
+                        </div>
+
+                        <a href="course-details.html?course=data"
+                           class="btn btn-course-details">
+
+                            View Details <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 4: GRAPHIC DESIGN -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="course-card"
+                     data-category="Design"
+                     data-level="Beginner">
+
+                    <div class="course-image">
+
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb"
+                             alt="Graphic design course">
+
+                        <span class="course-category">Design</span>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span>Creative Learning</span>
+                        </div>
+
+                        <h4>Graphic Design</h4>
+
+                        <p>
+                            Explore visual communication and learn
+                            to create attractive digital designs.
+                        </p>
+
+                        <div class="course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i> 7 Weeks
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i> Beginner
+                            </span>
+
+                        </div>
+
+                        <a href="course-details.html?course=design"
+                           class="btn btn-course-details">
+
+                            View Details <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 5: DIGITAL MARKETING -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="course-card"
+                     data-category="Marketing"
+                     data-level="Beginner">
+
+                    <div class="course-image">
+
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f"
+                             alt="Digital marketing course">
+
+                        <span class="course-category">Marketing</span>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span>Professional Skills</span>
+                        </div>
+
+                        <h4>Digital Marketing</h4>
+
+                        <p>
+                            Discover digital marketing strategies
+                            to promote brands and reach audiences.
+                        </p>
+
+                        <div class="course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i> 5 Weeks
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i> Beginner
+                            </span>
+
+                        </div>
+
+                        <a href="course-details.html?course=marketing"
+                           class="btn btn-course-details">
+
+                            View Details <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 6: DATABASE MANAGEMENT -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="course-card"
+                     data-category="Technology"
+                     data-level="Intermediate">
+
+                    <div class="course-image">
+
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                             alt="Database management course">
+
+                        <span class="course-category">Technology</span>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <span>Technical Skills</span>
+                        </div>
+
+                        <h4>Database Management</h4>
+
+                        <p>
+                            Learn how to store, organize and manage
+                            information using database systems.
+                        </p>
+
+                        <div class="course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i> 8 Weeks
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i> Intermediate
+                            </span>
+
+                        </div>
+
+                        <a href="course-details.html?course=database"
+                           class="btn btn-course-details">
+
+                            View Details <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NO RESULTS MESSAGE -->
+        <p id="noResults" class="text-center mt-4">
+
+            No courses found. Try another course name or change your filters.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+<!-- COURSE DETAILS MODAL -->
+<div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content course-modal">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="modalCourseTitle">
+                    Course Details
+                </h5>
+
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <span class="modal-category" id="modalCategory"></span>
+
+                <p id="modalDescription" class="mt-3"></p>
+
+                <div class="modal-info">
+
+                    <p>
+                        <i class="bi bi-clock"></i>
+                        <strong>Duration:</strong>
+                        <span id="modalDuration"></span>
+                    </p>
+
+                    <p>
+                        <i class="bi bi-bar-chart"></i>
+                        <strong>Level:</strong>
+                        <span id="modalLevel"></span>
+                    </p>
+
+                </div>
+
+                <h6>What You Will Learn</h6>
+
+                <ul id="modalTopics" class="modal-topics"></ul>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <a href="registration.html" class="btn btn-course-main">
+                    Register Now
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+
+                <button type="button" class="btn btn-modal-close"
+                        data-bs-dismiss="modal">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CALL TO ACTION -->
+<section class="courses-cta">
+
+    <div class="container text-center">
+
+        <h2>Ready to Start Learning?</h2>
+
+        <p>
+            Take the next step toward your goals.
+            Join EduLearn Academy today.
+        </p>
+
+        <a href="registration.html" class="btn btn-cta-light">
+            Register Now
+            <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="row gy-4">
+
+
+            <!-- ABOUT -->
+            <div class="col-lg-4 col-md-6">
+
+                <a href="index.html" class="footer-brand">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    EduLearn
+                </a>
+
+                <p class="footer-description">
+                    Empowering learners through quality online education.
+                    Discover new skills, explore technology, and build
+                    a brighter future with EduLearn Academy.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div class="col-lg-2 col-md-6">
+
+                <h5 class="footer-title">Quick Links</h5>
+
+                <ul class="footer-links">
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="registration.html">Register</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- POPULAR COURSES -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">Popular Courses</h5>
+
+                <ul class="footer-links">
+
+                    <li><a href="courses.html">Web Development</a></li>
+                    <li><a href="courses.html">Python Programming</a></li>
+                    <li><a href="courses.html">Data Science</a></li>
+                    <li><a href="courses.html">Java Programming</a></li>
+                    <li><a href="courses.html">Database Management</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT INFORMATION -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">Contact Information</h5>
+
+                <ul class="footer-contact">
+
+                    <li>
+                        <i class="bi bi-envelope"></i>
+                        <span>info@edulearn.com</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-telephone"></i>
+                        <span>+961 71 000 000</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Lebanon</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <div class="row align-items-center gy-2">
+
+                <div class="col-md-6">
+
+                    <p>
+                        © 2026 EduLearn Academy.
+                        All Rights Reserved.
+                    </p>
+
+                </div>
+
+                <div class="col-md-6 text-md-end">
+
+                    <a href="privacy.html">Privacy Policy</a>
+
+                    <a href="terms.html">Terms &amp; Conditions</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- COURSE SEARCH AND FILTER JAVASCRIPT -->
+<script>
+
+    
+
+    const searchInput = document.getElementById("courseSearch");
+
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    const levelFilter = document.getElementById("levelFilter");
+
+    const courseContainer = document.getElementById("courseContainer");
+
+    const noResults = document.getElementById("noResults");
+
+
+    
+
+    const courseCards = courseContainer.querySelectorAll(".course-card");
+
+
+    
+
+    function filterCourses() {
+        
+
+        const searchValue = searchInput.value.toLowerCase().trim();
+
+        const selectedCategory = categoryFilter.value;
+
+        const selectedLevel = levelFilter.value;
+
+        let visibleCourses = 0;
+
+
+        
+
+        courseCards.forEach(function (course) {
+
+           
+
+            const courseName = course.querySelector("h4")
+                                    .textContent.toLowerCase();
+
+            const courseCategory = course.dataset.category;
+
+            const courseLevel = course.dataset.level;
+
+
+           
+
+            const matchesName = courseName.includes(searchValue);
+
+
+           
+
+            const matchesCategory =
+                selectedCategory === "all" ||
+                courseCategory === selectedCategory;
+
+
+            // CHECK LEVEL
+
+            const matchesLevel =
+                selectedLevel === "all" ||
+                courseLevel === selectedLevel;
+
+
+            // SHOW OR HIDE COURSE
+
+            if (matchesName && matchesCategory && matchesLevel) {
+
+                course.parentElement.style.display = "";
+
+                visibleCourses++;
+
+            } else {
+
+                course.parentElement.style.display = "none";
+
+            }
+
+        });
+
+
+        // SHOW OR HIDE NO RESULTS MESSAGE
+
+        if (visibleCourses === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+
+    // EVENT LISTENERS
+
+    // Search when the user types
+    searchInput.addEventListener("input", filterCourses);
+
+    // Filter when the category changes
+    categoryFilter.addEventListener("change", filterCourses);
+
+    // Filter when the level changes
+    levelFilter.addEventListener("change", filterCourses);
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Courses | EduLearn Academy</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* PAGE HERO */
+        .my-courses-hero {
+            background: #f5f6ff;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .my-courses-hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .my-courses-hero h1 span {
+            color: #4f46e5;
+        }
+
+        .my-courses-hero p {
+            color: #666;
+        }
+
+        /* MY COURSES SECTION */
+        .my-courses-section {
+            padding: 70px 0;
+            min-height: 450px;
+        }
+
+        .my-courses-heading {
+            margin-bottom: 35px;
+        }
+
+        .my-courses-heading h2 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+
+        .registered-count {
+            display: inline-block;
+            background: #eeeeff;
+            color: #4f46e5;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* COURSE CARD */
+        .registered-course-card {
+            background: #fff;
+            border: 1px solid #e8e8ee;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            transition: 0.3s ease;
+        }
+
+        .registered-course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .registered-course-image {
+            height: 200px;
+            position: relative;
+        }
+
+        .registered-course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .registered-course-content {
+            padding: 22px;
+        }
+
+        .registered-course-content h4 {
+            font-weight: 700;
+            margin: 12px 0;
+        }
+
+        .registered-category {
+            display: inline-block;
+            background: #eeeeff;
+            color: #4f46e5;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .registered-course-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            color: #777;
+            font-size: 13px;
+            margin: 18px 0;
+        }
+
+        .registered-course-info i {
+            color: #4f46e5;
+            margin-right: 5px;
+        }
+
+        .registered-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .registered-actions a {
+            flex: 1;
+        }
+
+        .remove-course-btn {
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            background: white;
+            border-radius: 8px;
+            padding: 9px 12px;
+            transition: 0.3s;
+        }
+
+        .remove-course-btn:hover {
+            background: #dc3545;
+            color: white;
+        }
+
+        /* EMPTY STATE */
+        .empty-courses {
+            text-align: center;
+            padding: 65px 20px;
+            border: 1px dashed #ccc;
+            border-radius: 15px;
+        }
+
+        .empty-courses i {
+            font-size: 55px;
+            color: #4f46e5;
+            margin-bottom: 20px;
+        }
+
+        .empty-courses h3 {
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .empty-courses p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 576px) {
+            .registered-course-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body class="courses-page">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-mortarboard-fill me-1"></i>
+            Edu<span>Learn</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="courses.html">Courses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="my-courses.html">My Courses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-cta" href="registration.html">
+                        Join EduLearn
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="my-courses-hero">
+    <div class="container">
+
+        <span class="courses-label">YOUR LEARNING JOURNEY</span>
+
+        <h1>My <span>Courses</span></h1>
+
+        <p>
+            Keep track of the courses you have registered for
+            and continue your learning journey.
+        </p>
+
+    </div>
+</section>
+
+<!-- MY COURSES SECTION -->
+<section class="my-courses-section">
+    <div class="container">
+
+        <div class="my-courses-heading text-center">
+
+            <h2>Your Registered Courses</h2>
+
+            <p class="text-muted">
+                All your registered courses in one place.
+            </p>
+
+            <span class="registered-count" id="registeredCount">
+                0 Registered Courses
+            </span>
+
+        </div>
+
+        <!-- REGISTERED COURSES -->
+        <div class="row g-4" id="myCoursesContainer"></div>
+
+        <!-- EMPTY MESSAGE -->
+        <div class="empty-courses" id="emptyCourses">
+
+            <i class="bi bi-journal-bookmark"></i>
+
+            <h3>No Courses Yet!</h3>
+
+            <p>
+                You haven't registered for any courses.
+                Explore our courses and start learning today.
+            </p>
+
+            <a href="courses.html" class="btn btn-course-main">
+                Explore Courses
+                <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <a href="index.html" class="footer-brand">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    EduLearn
+                </a>
+
+                <p class="footer-description">
+                    Empowering learners through quality online education.
+                    Discover new skills, explore technology, and build
+                    a brighter future with EduLearn Academy.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5 class="footer-title">Quick Links</h5>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us </a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="my-courses.html">My Courses</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="registration.html">Register</a></li>
+                </ul>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">Popular Courses</h5>
+
+                <ul class="footer-links">
+                    <li><a href="courses.html">Web Development</a></li>
+                    <li><a href="courses.html">Python Programming</a></li>
+                    <li><a href="courses.html">Data Analysis</a></li>
+                    <li><a href="courses.html">Graphic Design</a></li>
+                    <li><a href="courses.html">Database Management</a></li>
+                </ul>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">Contact Information</h5>
+
+                <ul class="footer-contact">
+
+                    <li>
+                        <i class="bi bi-envelope"></i>
+                        <span>info@edulearn.com</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-telephone"></i>
+                        <span>+961 71 000 000</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Lebanon</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="row align-items-center gy-2">
+
+                <div class="col-md-6">
+                    <p>
+                        © 2026 EduLearn Academy.
+                        All Rights Reserved.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms &amp; Conditions</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- MY COURSES JAVASCRIPT -->
+<script>
+    // Course images from courses.html.
+    // These URLs are used as a fallback for older registrations
+    // that were saved without an image property.
+
+    const courseImages = {
+        web: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        python: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+        data: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+        design: "https://images.unsplash.com/photo-1558655146-9f40138edfeb",
+        marketing: "https://images.unsplash.com/photo-1516321497487-e288fb19713f",
+        database: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+    };
+
+    // GET ELEMENTS
+    const myCoursesContainer =
+        document.getElementById("myCoursesContainer");
+
+    const emptyCourses =
+        document.getElementById("emptyCourses");
+
+    const registeredCount =
+        document.getElementById("registeredCount");
+
+
+    // GET REGISTERED COURSES FROM LOCAL STORAGE SAFELY
+    function getRegisteredCourses() {
+        try {
+            const savedCourses = JSON.parse(
+                localStorage.getItem("registeredCourses")
+            );
+
+            return Array.isArray(savedCourses) ? savedCourses : [];
+
+        } catch (error) {
+            console.error("Could not read registered courses:", error);
+            return [];
+        }
+    }
+
+
+    // DISPLAY REGISTERED COURSES
+    function displayMyCourses() {
+
+        const registeredCourses = getRegisteredCourses();
+
+        myCoursesContainer.innerHTML = "";
+
+
+        // UPDATE COURSE COUNT
+        registeredCount.textContent =
+            registeredCourses.length +
+            (registeredCourses.length === 1
+                ? " Registered Course"
+                : " Registered Courses");
+
+
+        // CHECK IF THERE ARE NO COURSES
+        if (registeredCourses.length === 0) {
+
+            emptyCourses.style.display = "block";
+
+            return;
+        }
+
+        emptyCourses.style.display = "none";
+
+
+        // DISPLAY EACH REGISTERED COURSE
+        registeredCourses.forEach(function(course) {
+
+            const courseId = String(course.id || "");
+
+            // Use the saved image, or find it using the course ID.
+           const imageUrl =
+    courseImages[courseId] ||
+    course.image ||
+    "https://placehold.co/800x500?text=Course+Image";
+
+
+            const courseColumn = document.createElement("div");
+
+            courseColumn.className = "col-md-6 col-lg-4";
+
+
+            courseColumn.innerHTML = `
+                <div class="registered-course-card">
+
+                    <div class="registered-course-image">
+
+                        <img src="${imageUrl}"
+                             alt="${course.title || "Course"}"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x500?text=Course+Image';">
+
+                    </div>
+
+                    <div class="registered-course-content">
+
+                        <span class="registered-category">
+                            ${course.category || "Course"}
+                        </span>
+
+                        <h4>${course.title || "Untitled Course"}</h4>
+
+                        <div class="registered-course-info">
+
+                            <span>
+                                <i class="bi bi-clock"></i>
+                                ${course.duration || "Not specified"}
+                            </span>
+
+                            <span>
+                                <i class="bi bi-bar-chart"></i>
+                                ${course.level || "Not specified"}
+                            </span>
+
+                        </div>
+
+                        <div class="registered-actions">
+
+                            <a href="course-details.html?course=${encodeURIComponent(courseId)}"
+                               class="btn btn-course-details">
+
+                                View Details
+                                <i class="bi bi-arrow-right"></i>
+
+                            </a>
+
+                            <button class="remove-course-btn"
+                                    type="button"
+                                    data-course-id="${courseId}"
+                                    aria-label="Remove ${course.title || "course"}">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+            myCoursesContainer.appendChild(courseColumn);
+
+        });
+
+    }
+
+
+    // REMOVE A COURSE
+    myCoursesContainer.addEventListener("click", function(event) {
+
+        const removeButton =
+            event.target.closest(".remove-course-btn");
+
+        if (!removeButton) {
+            return;
+        }
+
+        const courseId = removeButton.dataset.courseId;
+
+        const confirmRemove = confirm(
+            "Are you sure you want to remove this course?"
+        );
+
+        if (!confirmRemove) {
+            return;
+        }
+
+        const updatedCourses = getRegisteredCourses().filter(function(course) {
+
+            return String(course.id) !== courseId;
+
+        });
+
+        localStorage.setItem(
+            "registeredCourses",
+            JSON.stringify(updatedCourses)
+        );
+
+        displayMyCourses();
+
+    });
+
+
+    // DISPLAY COURSES WHEN PAGE LOADS
+    displayMyCourses();
+
+</script>
+
+</body>
+</html>
