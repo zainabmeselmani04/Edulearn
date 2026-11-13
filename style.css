@@ -57,7 +57,13 @@ a {
     font-weight: 800;
     letter-spacing: -.7px;
 }
-
+.navbar{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 .navbar-brand i,
 .navbar-brand span {
     color: var(--teal);
